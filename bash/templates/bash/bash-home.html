@@ -1,0 +1,85 @@
+{% extends "main.html" %}
+
+<!--  -->
+{% load static %}
+
+<!--  -->
+{% block content %}
+<link rel="stylesheet" href="{% static 'styles/bash-home.css' %}" />
+<section class="bash__home">
+  <div class="bash__home--container">
+    <div class="recent--bashes">
+      <p id="recent-bashes">Recent Bashes</p>
+      <ul id="bash--list">
+        <li id="bashes">
+          <strong>Alan Walker</strong> bashed a Happy new year to
+          <strong>Elon Musk</strong> 🥳🎉🎊
+        </li>
+
+        <li id="bashes">
+          <strong>Alan Walker</strong> bashed a Happy new year to
+          <strong>Elon Musk</strong>
+        </li>
+        <li id="bashes">
+          <strong>Alan Walker</strong> bashed a Happy new year to
+          <strong>Elon Musk</strong>
+        </li>
+        <li id="bashes">
+          <strong>Alan Walker</strong> bashed a Happy new year to
+          <strong>Elon Musk</strong>
+        </li>
+        <li id="bashes">
+          <strong>Alan Walker</strong> bashed a Happy new year to
+          <strong>Elon Musk</strong>
+        </li>
+        <li id="bashes">
+          <strong>Alan Walker</strong> bashed a Happy new year to
+          <strong>Elon Musk</strong>
+        </li>
+      </ul>
+    </div>
+    <div class="friend--bashers">
+      <div class="friend--bashers--search">
+        <input
+          type="text"
+          id="search--bar"
+          placeholder="search your friends and bash them.."
+        />
+      </div>
+      <div class="friends--container">
+        {% for user in profile %}
+        <div class="friends">
+          <div class="friends--img">
+            <img src="{{user.profile_image.url}}" alt="" id="user--img" />
+          </div>
+          <div class="user--info">
+            <h1>{{user.name}}</h1>
+            <p>Good Guy, sending money to Everyone</p>
+          </div>
+          <div class="user--stats">
+            <div class="stats">
+              <h1>14K</h1>
+              <p>Bashes</p>
+            </div>
+            <div class="stats">
+              <h1>2K</h1>
+              <p>Messages</p>
+            </div>
+            <div class="stats">
+              <h1>15th</h1>
+              <p>Rank</p>
+            </div>
+          </div>
+          <div class="user--btns">
+            <a href=""
+              ><div class="user--btns--1 btn">Bash {{user.username}}</div></a
+            >
+            <a href=""><div class="user--btns--2 btn">send message</div></a>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock content %}
