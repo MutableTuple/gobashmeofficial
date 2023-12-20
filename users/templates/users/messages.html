@@ -1,0 +1,24 @@
+{% extends "main.html" %} {% load static %}
+<!--  -->
+{% block content %}
+<link rel="stylesheet" href="{% static 'styles/messages.css' %}" />
+<!-- prettier-ignore -->
+<section class="messages__container">
+    <div class="messages__con--placer">
+        {% for message in messages %}
+        <div class="message--card">
+            <div id="info--mesenger">
+                <img src="{{message.sender.profile_image.url}}" alt="message-sender" id="sender-pic">
+                <p id="sender-name">{{message.sender.name}}</p> 
+            </div>
+            <h1 id="sender">
+              <strong>{{message.sender.name}}</strong> wished you {{message.subject}} and says {{message.message}}
+            </h1>
+        </div>
+        {% endfor %}
+        
+    </div>
+  
+</section>
+
+{% endblock content %}
