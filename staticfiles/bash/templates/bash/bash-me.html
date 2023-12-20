@@ -36,6 +36,7 @@
       <p>{{user.sender}}</p>
       <p>{{profile.recipient}}</p>
     </div>
+    {% if sender %}
     <div class="message__form">
       <form action="" id="message-form" method="POST">
         <!-- prettier-ignore -->
@@ -46,6 +47,9 @@
         <button id="bash" type="submit">Submit</button>
       </form>
     </div>
+    {% else %}
+    <p>Login to send</p>
+    {% endif %}
   </div>
   <!-- <div class="login--box">
     <h3 id="info--text">Not on Gobash? <a href="" id="su">sign up</a></h3>
